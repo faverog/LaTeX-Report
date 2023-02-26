@@ -10,6 +10,7 @@ import tempfile
 import base64
 import zlib
 import os
+import shutil
 
 class LaTeXReportGenerator:
     def __init__(self):
@@ -90,4 +91,7 @@ class LaTeXReportGenerator:
                 filepath = os.path.join(self.path, self.report_information["File Name"] + ".tex")
                 with open(filepath, 'w') as new_file:
                     new_file.write(new_report)
+            
+            shutil.copyfile('LaTeX Templates/Favero/mcode.sty', os.path.join(self.path, 'mcode.sty'))
+            shutil.copyfile('LaTeX Templates/Favero/matlab.sty', os.path.join(self.path, 'matlab.sty'))
 
