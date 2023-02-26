@@ -45,8 +45,8 @@ class LaTeXReportGenerator:
         if not os.path.exists(self.path):
             os.makedirs(self.path)
         
-        if not os.path.exists(folder_selected + "Images"):
-            os.makedirs(folder_selected + "Images")
+        if not os.path.exists(folder_selected + "/Images"):
+            os.makedirs(folder_selected + "/Images")
 
     def submit_entries(self):
         # Get the values from the entry fields
