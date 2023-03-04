@@ -124,6 +124,8 @@ class LaTeXReportGenerator:
         elif self.report_information["Template"] == "Capstone Report":
             path = 'LaTeX Templates/Capstone Progress Updates/ProgressReport.tex'
             shutil.copyfile('LaTeX Templates/Capstone Progress Updates/assignment.cls', os.path.join(self.path, 'assignment.cls'))
+            shutil.copyfile('LaTeX Templates/Capstone Progress Updates/UWin Logo.jpg', os.path.join(self.path, 'UWin Logo.jpg'))
+            shutil.copyfile('LaTeX Templates/Capstone Progress Updates/GanttChart.png', os.path.join(self.path, 'GanttChart.png'))
 
         if path != "":
             print("Generating Report...")
