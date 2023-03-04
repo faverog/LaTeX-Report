@@ -123,6 +123,7 @@ class LaTeXReportGenerator:
             shutil.copyfile('LaTeX Templates/Favero/matlab.sty', os.path.join(self.path, 'matlab.sty'))
         elif self.report_information["Template"] == "Capstone Report":
             path = 'LaTeX Templates/Capstone Progress Updates/ProgressReport.tex'
+            shutil.copyfile('LaTeX Templates/Capstone Progress Updates/assignment.cls', os.path.join(self.path, 'assignment.cls'))
 
         if path != "":
             print("Generating Report...")
