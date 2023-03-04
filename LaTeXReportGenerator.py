@@ -97,7 +97,7 @@ class LaTeXReportGenerator:
 
         # Create entry fields for the report information
         if self.report_information["Template"] == "Favero":
-            entry_labels = ["File Name", "Report Title", "Course", "Professor", "Author", "Student Number", "Due Date"]
+            entry_labels = ["File Name", "Report Title", "Course", "Professor", "Author", "Student ID", "Due Date"]
         elif self.report_information["Template"] == "Capstone Report":
             entry_labels = ["File Name", "Date"]
         self.report_information["Info Keys"] = {key: "" for key in entry_labels}
@@ -116,26 +116,17 @@ class LaTeXReportGenerator:
         self.root.mainloop()
 
     def generate_report(self):
+        path = ""
         if self.report_information["Template"] == "Favero":
-            print("Generating Favero Report...")
-            with open('LaTeX Templates/Favero/FaveroTemplate.tex', 'r') as template_file:
-                template = template_file.read()
-                for key in self.report_information["Info Keys"].keys():
-                    template = template.replace(f'${key}$', self.report_information["Info Keys"][key])
-                new_report = template
-
-                filepath = os.path.join(self.path, self.report_information["File Name"] + ".tex")
-                with open(filepath, 'w') as new_file:
-                    new_file.write(new_report)
-            
+            path = 'LaTeX Templates/Favero/FaveroTemplate.tex'
             shutil.copyfile('LaTeX Templates/Favero/mcode.sty', os.path.join(self.path, 'mcode.sty'))
             shutil.copyfile('LaTeX Templates/Favero/matlab.sty', os.path.join(self.path, 'matlab.sty'))
-
-            print("Report Generated Successfully!")
-        
         elif self.report_information["Template"] == "Capstone Report":
-            print("Generating Capstone Report...")
-            with open('LaTeX Templates/Capstone Progress Updates/ProgressReport.tex', 'r') as template_file:
+            path = 'LaTeX Templates/Capstone Progress Updates/ProgressReport.tex'
+
+        if path != "":
+            print("Generating Report...")
+            with open(path, 'r') as template_file:
                 template = template_file.read()
                 for key in self.report_information["Info Keys"].keys():
                     template = template.replace(f'${key}$', self.report_information["Info Keys"][key])
@@ -144,5 +135,7 @@ class LaTeXReportGenerator:
                 filepath = os.path.join(self.path, self.report_information["Info Keys"]["File Name"] + ".tex")
                 with open(filepath, 'w') as new_file:
                     new_file.write(new_report)
-            
+
             print("Report Generated Successfully!")
+        else:
+            print("Error with template selection")
