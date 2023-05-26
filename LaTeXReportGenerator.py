@@ -128,6 +128,10 @@ class LaTeXReportGenerator:
             shutil.copyfile('LaTeX Templates/Capstone Progress Updates/assignment.cls', os.path.join(self.path, 'assignment.cls'))
             shutil.copyfile('LaTeX Templates/Capstone Progress Updates/UWin Logo.jpg', os.path.join(self.path, 'UWin Logo.jpg'))
             shutil.copyfile('LaTeX Templates/Capstone Progress Updates/GanttChart.png', os.path.join(self.path, 'GanttChart.png'))
+        elif self.report_information["Template"] == "Favero 2":
+            path = 'LaTeX Templates/Favero 2/Favero 2.tex'
+            shutil.copyfile('LaTeX Templates/Favero 2/assignment.cls', os.path.join(self.path, 'assignment.cls'))
+            shutil.copyfile('LaTeX Templates/Favero 2/UWin Logo.jpg', os.path.join(self.path, 'UWin Logo.jpg'))
 
         if path != "":
             print("Generating Report...")
