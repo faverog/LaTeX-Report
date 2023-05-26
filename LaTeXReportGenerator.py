@@ -57,7 +57,7 @@ class LaTeXReportGenerator:
         label = Label(self.root, text="Select a report template:")
         label.grid(row=0, column=0, padx=5, pady=5)
 
-        options = ["Favero", "Capstone Report"]
+        options = ["Favero", "Capstone Report", "Favero 2"]
         self.selected_template = StringVar(self.root)
 
         self.selected_template.set(options[0])
@@ -100,6 +100,8 @@ class LaTeXReportGenerator:
             entry_labels = ["File Name", "Report Title", "Course", "Professor", "Author", "Student ID", "Due Date"]
         elif self.report_information["Template"] == "Capstone Report":
             entry_labels = ["File Name", "Date"]
+        elif self.report_information["Template"] == "Favero 2":
+            entry_labels = ["File Name", "Report Title", "Course", "Author", "Student ID", "Due Date"]
         self.report_information["Info Keys"] = {key: "" for key in entry_labels}
         self.entries = [Entry(self.root) for i in range(len(entry_labels))]
 
