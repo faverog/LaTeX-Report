@@ -132,6 +132,7 @@ class LaTeXReportGenerator:
             path = 'LaTeX Templates/Favero 2/Favero 2.tex'
             shutil.copyfile('LaTeX Templates/Favero 2/assignment.cls', os.path.join(self.path, 'assignment.cls'))
             shutil.copyfile('LaTeX Templates/Favero 2/UWin Logo.jpg', os.path.join(self.path, 'UWin Logo.jpg'))
+            shutil.copyfile('LaTeX Templates/Favero 2/mcgill_logo.jpg', os.path.join(self.path, 'mcgill_logo.jpg'))
 
         if path != "":
             print("Generating Report...")

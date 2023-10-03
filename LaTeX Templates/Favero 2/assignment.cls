@@ -42,7 +42,7 @@
 
 \newcommand{\assignmentTitle}[4]{
     \begin{flushright}\vspace{-15mm}
-    \includegraphics[height=2.5cm]{#1}
+    \includegraphics[height=1.0cm]{#1}
     \end{flushright}
     
     \begin{center}\vspace{-1.5cm}
