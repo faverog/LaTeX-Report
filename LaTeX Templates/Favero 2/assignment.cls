@@ -46,8 +46,8 @@
     \end{flushright}
     
     \begin{center}\vspace{-1.5cm}
-    \textbf{#2} \\
-    \textbf{#4} \\
+    \textbf{#2} \\[1ex]
+    #4 \\[1ex]
     #3
     \end{center}
     \noindent\rule{\linewidth}{.6pt}
